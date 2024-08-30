@@ -1,8 +1,15 @@
-# Left 4 Bhop
+<div align = center>
 
-Free Left 4 Dead bhop plugin.
+![banner](https://i.imgur.com/QcnghYq.png)
 
-![banner](https://steamcdn-a.akamaihd.net/steam/apps/550/capsule_616x353.jpg?t=1601578341)
+![GitHub License](https://img.shields.io/github/license/orange-cpp/l4bhop)
+![GitHub contributors](https://img.shields.io/github/contributors/orange-cpp/l4bhop)
+![GitHub top language](https://img.shields.io/github/languages/top/orange-cpp/l4bhop)
+![GitHub forks](https://img.shields.io/github/forks/orange-cpp/l4bhop)
+</div>
+
+Free Left 4 Dead 2 bhop plugin.
+
 
 ## Risk of VAC detection
 
@@ -12,14 +19,6 @@ The software could be detected by [VAC](https://en.wikipedia.org/wiki/Valve_Anti
 
 Left 4 Bhop is a training software designed for Left 4 Dead 2 for Windows.
 
-* Dll using for high speed.
 * Plugin can be used in online games.
 * Press end key to unload plugin.
 * Use [dll injector](https://processhacker.sourceforge.io/downloads.php) to load plugin.
-## Download
-
-You can download plugin from [here](https://github.com/VladislavAlpatov/l4bhop/releases/).
-
-## Community
-
-Our [telegram group](https://t.me/LittleSoftwareStudio).
