@@ -8,7 +8,7 @@
 
 BYTE GetBit(char chr)
 {
-    chr = (char)std::tolower(chr);
+    chr = static_cast<char>(std::tolower(chr));
 
     if ('a' <= chr and chr <= 'z')
         return chr - 'a' + 10;

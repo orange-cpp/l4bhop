@@ -1,3 +1,6 @@
 [submodule "extlibs/minhook"]
 	path = extlibs/minhook
 	url = https://github.com/TsudaKageyu/minhook.git
+[submodule "extlibs/code-virtualizer-sdk"]
+	path = extlibs/code-virtualizer-sdk
+	url = https://github.com/orange-cpp/code-virtualizer-sdk.git

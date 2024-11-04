@@ -1,34 +1,69 @@
 {
-    "version": 3,
-    "configurePresets": [
-      {
-        "name": "base",
-        "hidden": true,
-        "binaryDir": "${sourceDir}/cmake-build/build/${presetName}",
-        "installDir": "${sourceDir}/cmake-build/install/${presetName}",
-        "cacheVariables": {}
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "windows-base",
+      "hidden": true,
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/cmake-build/build/${presetName}",
+      "installDir": "${sourceDir}/cmake-build/install/${presetName}",
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "cl.exe",
+        "CMAKE_CXX_COMPILER": "cl.exe"
       },
-      {
-        "name": "x64-debug",
-        "displayName": "Debug",
-        "inherits": "base",
-        "architecture": {
-          "value": "x64",
-          "strategy": "external"
-        },
-        "cacheVariables": {
-          "CMAKE_BUILD_TYPE": "Debug",
-          "CMAKE_RUNTIME_OUTPUT_DIRECTORY": "${sourceDir}/out/Debug"
-        }
-      },
-      {
-        "name": "x64-release",
-        "displayName": "Release",
-        "inherits": "x64-debug",
-        "cacheVariables": {
-          "CMAKE_BUILD_TYPE": "Release",
-          "CMAKE_RUNTIME_OUTPUT_DIRECTORY": "${sourceDir}/out/Release"
-        }
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
       }
-    ]
-  }
+    },
+    {
+      "name": "windows-debug",
+      "displayName": "Debug",
+      "inherits": "windows-base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "windows-release",
+      "displayName": "Release",
+      "inherits": "windows-base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "linux-base",
+      "hidden": true,
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/cmake-build/build/${presetName}",
+      "installDir": "${sourceDir}/cmake-build/install/${presetName}",
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "gcc",
+        "CMAKE_CXX_COMPILER": "g++"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Linux"
+      }
+    },
+    {
+      "name": "linux-debug",
+      "displayName": "Linux Debug",
+      "inherits": "linux-base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "linux-release",
+      "displayName": "Linux Release",
+      "inherits": "linux-debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    }
+  ]
+}

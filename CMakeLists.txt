@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD 26)
 
 
 project(l4bhop)
@@ -11,11 +11,7 @@ set(CMAKE_SHARED_MODULE_PREFIX "")
 add_subdirectory(src/utils)
 add_subdirectory(src/SDK)
 add_subdirectory(extlibs/minhook)
+add_subdirectory(extlibs/code-virtualizer-sdk)
 
-target_link_libraries(l4bhop PRIVATE minhook)
-
-
-link_directories("$ENV{DXSDK_DIR}Lib/x86")
-include_directories("$ENV{DXSDK_DIR}Include")
-
-target_link_libraries(l4bhop PRIVATE d3d9)
+target_link_libraries(l4bhop PRIVATE minhook d3d9 cv-sdk)
+target_compile_definitions(l4bhop PRIVATE CV_X32_INSERT_VIA_INLINE)

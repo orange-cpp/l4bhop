@@ -4,13 +4,17 @@
 #include "SDK/CLocalPlayer.h"
 #include "SDK/CUserCmd.h"
 #include <MinHook.h>
+#include <CodeVirtualizer/VirtualizerSDK.h>
+#include <thread>
 
 
 LPVOID oCreateMove = nullptr;
 
-int __stdcall hCreateMove(float a1, sdk::CUserCmd* pUserCmd)
+// ReSharper disable once CppDFAConstantFunctionResult
+int __stdcall hCreateMove(float a1, sdk::CUserCmd *pUserCmd)
 {
-    const sdk::CLocalPlayer* pLocalPlayer = sdk::CLocalPlayer::Get();
+    VIRTUALIZER_FALCON_TINY_START
+    const sdk::CLocalPlayer *pLocalPlayer = sdk::CLocalPlayer::Get();
 
     if (pLocalPlayer == nullptr)
         return false;
@@ -20,18 +24,23 @@ int __stdcall hCreateMove(float a1, sdk::CUserCmd* pUserCmd)
 
     if (GetAsyncKeyState(VK_SHIFT))
         pUserCmd->m_iTickCount = 1677721;
+
+    VIRTUALIZER_FALCON_TINY_END
     return false;
 }
 
 DWORD WINAPI HackThread(HMODULE hModule)
 {
+    VIRTUALIZER_FALCON_TINY_START
+
     while (!GetModuleHandleA(xorstr("client.dll")))
-        Sleep(50);
+        std::this_thread::sleep_for(std::chrono::milliseconds(500));
 
     MH_Initialize();
-    const auto pCreateMove = memory::FindPattern(xorstr("client.dll"), xorstr("55 8B EC 6A FF E8 ?? ?? ?? ?? 83 C4 04 85 C0 75 06 B0 01"));
+    const auto pCreateMove = memory::FindPattern(
+        xorstr("client.dll"), xorstr("55 8B EC 6A FF E8 ?? ?? ?? ?? 83 C4 04 85 C0 75 06 B0 01"));
 
-    MH_CreateHook((LPVOID)pCreateMove, (void*)hCreateMove, &oCreateMove);
+    MH_CreateHook(reinterpret_cast<LPVOID>(pCreateMove), hCreateMove, &oCreateMove);
 
     MH_EnableHook(MH_ALL_HOOKS);
     MessageBeep(MB_ICONINFORMATION);
@@ -41,23 +50,20 @@ DWORD WINAPI HackThread(HMODULE hModule)
         Sleep(100);
 
     MH_DisableHook(MH_ALL_HOOKS);
-    Sleep(100);
     MH_RemoveHook(MH_ALL_HOOKS);
     MH_Uninitialize();
 
+    VIRTUALIZER_FALCON_TINY_END
     FreeLibraryAndExitThread(hModule, 0);
 }
 
 
-extern "C" BOOL WINAPI DllMain(
-	HINSTANCE hinstDLL,
-	DWORD fdwReason,
-	LPVOID lpvReserved
-)
+BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
 {
+    VIRTUALIZER_FALCON_TINY_START
     if (fdwReason == DLL_PROCESS_ATTACH)
-    {
-        CreateThread(nullptr, 0, (LPTHREAD_START_ROUTINE)HackThread, hinstDLL, 0, nullptr);
-    }
+        std::thread(HackThread, hinstDLL).detach();
+
+    VIRTUALIZER_FALCON_TINY_END
     return TRUE;
 }

@@ -59,7 +59,6 @@ namespace sdk
         static  CLocalPlayer* Get();
         union
         {
-
             DEFINE_MEMBER_N(int, m_iFlags, 0xF0);
         };
     private:
