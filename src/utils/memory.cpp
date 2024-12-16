@@ -5,6 +5,8 @@
 #include "memory.h"
 #include <vector>
 #include <locale>
+#include <CodeVirtualizer/VirtualizerSDK.h>
+
 
 BYTE GetBit(char chr)
 {
@@ -17,6 +19,7 @@ BYTE GetBit(char chr)
 }
 std::vector<BYTE> GetSignatureBytes(const char* str)
 {
+    VIRTUALIZER_FALCON_TINY_START
     std::vector<BYTE> bytes;
     const auto length = strlen(str);
 
@@ -36,12 +39,14 @@ std::vector<BYTE> GetSignatureBytes(const char* str)
         bytes.push_back( (GetBit(str[i]) << 4) + GetBit(str[i + 1]) );
         i += 2;
     }
+    VIRTUALIZER_FALCON_TINY_END
 
     return bytes;
 }
 
 DWORD memory::FindPattern(const char* moduleName, const char* signature)
 {
+    VIRTUALIZER_FALCON_TINY_START
     const auto base = (uintptr_t)GetModuleHandleA(moduleName);
 
     const auto imageNTHeaders = (PIMAGE_NT_HEADERS)(base + ((PIMAGE_DOS_HEADER)base)->e_lfanew);
@@ -64,6 +69,6 @@ DWORD memory::FindPattern(const char* moduleName, const char* signature)
         if (found)
             return base + i;
     }
-
+    VIRTUALIZER_FALCON_TINY_END
     return 0;
 }

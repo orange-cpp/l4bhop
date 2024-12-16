@@ -7,11 +7,11 @@
 #include <CodeVirtualizer/VirtualizerSDK.h>
 #include <thread>
 
-
+#undef max
 LPVOID oCreateMove = nullptr;
 
 // ReSharper disable once CppDFAConstantFunctionResult
-int __stdcall hCreateMove(float a1, sdk::CUserCmd *pUserCmd)
+int __stdcall hCreateMove(float, sdk::CUserCmd *pUserCmd)
 {
     VIRTUALIZER_FALCON_TINY_START
     const sdk::CLocalPlayer *pLocalPlayer = sdk::CLocalPlayer::Get();
@@ -23,7 +23,7 @@ int __stdcall hCreateMove(float a1, sdk::CUserCmd *pUserCmd)
         pUserCmd->m_iButtons &= ~sdk::CUserCmd::IN_JUMP;
 
     if (GetAsyncKeyState(VK_SHIFT))
-        pUserCmd->m_iTickCount = 1677721;
+        pUserCmd->m_iTickCount = std::numeric_limits<int>::max();
 
     VIRTUALIZER_FALCON_TINY_END
     return false;
