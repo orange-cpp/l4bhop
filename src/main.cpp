@@ -1,6 +1,6 @@
 #include <Windows.h>
 #include "utils/memory.h"
-#include "utils/xorstr.h"
+#include <xorstr.hpp>
 #include "SDK/CLocalPlayer.h"
 #include "SDK/CUserCmd.h"
 #include <MinHook.h>
@@ -33,12 +33,12 @@ DWORD WINAPI HackThread(HMODULE hModule)
 {
     VIRTUALIZER_FALCON_TINY_START
 
-    while (!GetModuleHandleA(xorstr("client.dll")))
-        std::this_thread::sleep_for(std::chrono::milliseconds(500));
+    while (!GetModuleHandleA(xorstr_("client.dll")))
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
 
     MH_Initialize();
     const auto pCreateMove = memory::FindPattern(
-        xorstr("client.dll"), xorstr("55 8B EC 6A FF E8 ?? ?? ?? ?? 83 C4 04 85 C0 75 06 B0 01"));
+        xorstr_("client.dll"), xorstr_("55 8B EC 6A FF E8 ?? ?? ?? ?? 83 C4 04 85 C0 75 06 B0 01"));
 
     MH_CreateHook(reinterpret_cast<LPVOID>(pCreateMove), hCreateMove, &oCreateMove);
 
@@ -47,7 +47,7 @@ DWORD WINAPI HackThread(HMODULE hModule)
 
 
     while (!GetAsyncKeyState(VK_END))
-        Sleep(100);
+        std::this_thread::sleep_for(std::chrono::milliseconds(250));
 
     MH_DisableHook(MH_ALL_HOOKS);
     MH_RemoveHook(MH_ALL_HOOKS);
