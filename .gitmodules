@@ -1,6 +1,6 @@
-[submodule "extlibs/code-virtualizer-sdk"]
-	path = extlibs/code-virtualizer-sdk
-	url = https://github.com/orange-cpp/code-virtualizer-sdk.git
 [submodule "extlibs/xorstr"]
 	path = extlibs/xorstr
 	url = https://github.com/JustasMasiulis/xorstr.git
+[submodule "extlibs/omath"]
+	path = extlibs/omath
+	url = https://github.com/orange-cpp/omath

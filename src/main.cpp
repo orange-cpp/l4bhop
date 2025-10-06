@@ -4,7 +4,6 @@
 #include "SDK/CLocalPlayer.h"
 #include "SDK/CUserCmd.h"
 #include <MinHook.h>
-#include <CodeVirtualizer/VirtualizerSDK.h>
 #include <thread>
 
 #undef max
@@ -13,7 +12,6 @@ LPVOID oCreateMove = nullptr;
 // ReSharper disable once CppDFAConstantFunctionResult
 int __stdcall hCreateMove(float, sdk::CUserCmd *pUserCmd)
 {
-    VIRTUALIZER_FALCON_TINY_START
     const sdk::CLocalPlayer *pLocalPlayer = sdk::CLocalPlayer::Get();
 
     if (pLocalPlayer == nullptr)
@@ -25,13 +23,11 @@ int __stdcall hCreateMove(float, sdk::CUserCmd *pUserCmd)
     if (GetAsyncKeyState(VK_SHIFT))
         pUserCmd->m_iTickCount = std::numeric_limits<int>::max();
 
-    VIRTUALIZER_FALCON_TINY_END
     return false;
 }
 
-DWORD WINAPI HackThread(HMODULE hModule)
+void WINAPI HackThread(HMODULE hModule)
 {
-    VIRTUALIZER_FALCON_TINY_START
 
     while (!GetModuleHandleA(xorstr_("client.dll")))
         std::this_thread::sleep_for(std::chrono::milliseconds(100));
@@ -53,17 +49,14 @@ DWORD WINAPI HackThread(HMODULE hModule)
     MH_RemoveHook(MH_ALL_HOOKS);
     MH_Uninitialize();
 
-    VIRTUALIZER_FALCON_TINY_END
-    FreeLibraryAndExitThread(hModule, 0);
+    FreeLibrary(hModule);
 }
 
 
 BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
 {
-    VIRTUALIZER_FALCON_TINY_START
     if (fdwReason == DLL_PROCESS_ATTACH)
         std::thread(HackThread, hinstDLL).detach();
 
-    VIRTUALIZER_FALCON_TINY_END
     return TRUE;
 }
