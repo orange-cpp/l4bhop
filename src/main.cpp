@@ -1,10 +1,11 @@
-#include <Windows.h>
-#include "utils/memory.h"
-#include <xorstr.hpp>
 #include "SDK/CLocalPlayer.h"
 #include "SDK/CUserCmd.h"
+#include "utils/memory.h"
 #include <MinHook.h>
+#include <Windows.h>
+#include <omath/utility/pe_pattern_scan.hpp>
 #include <thread>
+#include <xorstr.hpp>
 
 #undef max
 LPVOID oCreateMove = nullptr;
@@ -33,8 +34,8 @@ void WINAPI HackThread(HMODULE hModule)
         std::this_thread::sleep_for(std::chrono::milliseconds(100));
 
     MH_Initialize();
-    const auto pCreateMove = memory::FindPattern(
-        xorstr_("client.dll"), xorstr_("55 8B EC 6A FF E8 ?? ?? ?? ?? 83 C4 04 85 C0 75 06 B0 01"));
+    const auto pCreateMove = omath::PePatternScanner::scan_for_pattern_in_loaded_module(
+        xorstr_("client.dll"), xorstr_("55 8B EC 6A FF E8 ?? ?? ?? ?? 83 C4 04 85 C0 75 06 B0 01")).value();
 
     MH_CreateHook(reinterpret_cast<LPVOID>(pCreateMove), hCreateMove, &oCreateMove);
 

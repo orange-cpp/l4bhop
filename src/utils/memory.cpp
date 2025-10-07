@@ -23,7 +23,7 @@ DWORD memory::FindPattern(const char* moduleName, const char* signature)
     const auto scan_range = std::span{reinterpret_cast<std::byte *>(base) +start, scanSize};
 
     const auto result = omath::PatternScanner::scan_for_pattern(scan_range, signature);
-    if (result == scan_range.cbegin())
+    if (result != scan_range.cend())
         return reinterpret_cast<DWORD>(&(*result));
     return 0;
 }
