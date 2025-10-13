@@ -4,7 +4,7 @@
 #pragma once
 namespace sdk
 {
-    class CUserCmd
+    class UserCmd
     {
     public:
 

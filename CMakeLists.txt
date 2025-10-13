@@ -8,7 +8,6 @@ add_library(l4bhop MODULE src/main.cpp)
 
 set(CMAKE_SHARED_MODULE_PREFIX "")
 
-add_subdirectory(src/utils)
 add_subdirectory(src/SDK)
 add_subdirectory(extlibs)
 target_link_libraries(l4bhop PRIVATE minhook xorstr omath::omath)
