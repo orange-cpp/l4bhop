@@ -1,6 +1,0 @@
-[submodule "extlibs/xorstr"]
-	path = extlibs/xorstr
-	url = https://github.com/JustasMasiulis/xorstr.git
-[submodule "extlibs/omath"]
-	path = extlibs/omath
-	url = https://github.com/orange-cpp/omath

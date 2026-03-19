@@ -4,20 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="BackendCodeEditorMiscSettings">
-    <option name="/Default/Environment/Hierarchy/GeneratedFilesCacheKey/Timestamp/@EntryValue" value="7" type="long" />
+    <option name="/Default/Environment/Hierarchy/GeneratedFilesCacheKey/Timestamp/@EntryValue" value="11" type="long" />
     <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
+    <option name="/Default/Housekeeping/GlobalSettingsUpgraded/IsUpgraded/@EntryValue" value="true" type="bool" />
+    <option name="/Default/RiderDebugger/RiderRestoreDecompile/RestoreDecompileSetting/@EntryValue" value="false" type="bool" />
   </component>
-  <component name="CMakePresetLoader"><![CDATA[{
-  "useNewFormat": true
-}]]></component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
+  <component name="CMakeProjectFlavorService">
+    <option name="flavorId" value="CMakePlainProjectFlavor" />
+  </component>
   <component name="CMakeReloadState">
     <option name="reloaded" value="true" />
   </component>
   <component name="CMakeRunConfigurationManager">
     <generated>
-      <config projectName="l4bhop" targetName="minhook" />
       <config projectName="l4bhop" targetName="l4bhop" />
-      <config projectName="l4bhop" targetName="omath" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -28,44 +31,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0868c37d-aeef-4aed-b175-db443a137710" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.clang-format" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.clang-tidy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SDK/local_player.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vcpkg-configuration.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vcpkg.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmprotect_sdk/include/VMProtectSDK.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vmprotect_sdk/lib/VMProtectSDK32.lib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/l4bhop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/l4bhop.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extlibs/minhook" beforeDir="false" afterPath="$PROJECT_DIR$/extlibs/minhook" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extlibs/minhook/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/extlibs/minhook/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extlibs/omath" beforeDir="false" afterPath="$PROJECT_DIR$/extlibs/omath" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SDK/CLocalPlayer.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SDK/CLocalPlayer.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/SDK/local_player.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SDK/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/SDK/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SDK/CUserCmd.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/SDK/user_cmd.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakePresets.json" beforeDir="false" afterPath="$PROJECT_DIR$/CMakePresets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extlibs/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extlibs/minhook" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extlibs/omath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extlibs/xorstr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SDK/local_player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/SDK/local_player.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/memory.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/memory.h" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:windows-release" />
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "orange-cpp"
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;orange-cpp&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/orange-cpp/l4bhop.git",
-    "accountId": "c4d79fda-173c-49ad-87c8-e3d328355fc3"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/orange-cpp/l4bhop.git&quot;,
+    &quot;accountId&quot;: &quot;c4d79fda-173c-49ad-87c8-e3d328355fc3&quot;
   }
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="3BAQBuAtcHFDvgR0wefsFTlDGAj" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -75,13 +86,17 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.RadMigrateCodeStyle": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "RunOnceActivity.west.config.association.type.startup.service": "true",
     "cf.advertisement.text.overridden": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/orange/CLionProjects/l4bhop",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -91,7 +106,15 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="CMake Application.l4bhop">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\orange\CLionProjects\l4bhop\vmprotect_sdk\include" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\orange\CLionProjects\l4bhop\vmprotect_sdk\lib" />
+    </key>
+  </component>
+  <component name="RunManager">
     <configuration default="true" type="BIBTEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory">
       <texify-bibtex>
         <compiler />
@@ -103,26 +126,6 @@
         <latex-distribution>PROJECT_SDK</latex-distribution>
       </texify-bibtex>
       <method v="2" />
-    </configuration>
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="l4bhop" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="l4bhop" TARGET_NAME="l4bhop" CONFIG_NAME="windows-debug">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="minhook" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="l4bhop" TARGET_NAME="minhook" CONFIG_NAME="windows-debug">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="omath" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="l4bhop" TARGET_NAME="omath" CONFIG_NAME="windows-debug">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
     </configuration>
     <configuration default="true" type="EXTERNAL_TOOL_RUN_CONFIGURATION" factoryName="LaTeX configuration factory">
       <texify-external>
@@ -142,11 +145,11 @@
       </texify-makeindex>
       <method v="2" />
     </configuration>
-    <list>
-      <item itemvalue="CMake Application.l4bhop" />
-      <item itemvalue="CMake Application.minhook" />
-      <item itemvalue="CMake Application.omath" />
-    </list>
+    <configuration name="l4bhop" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="l4bhop" TARGET_NAME="l4bhop" CONFIG_NAME="windows-debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -157,6 +160,8 @@
       <updated>1737804276829</updated>
       <workItem from="1737804279605" duration="64000" />
       <workItem from="1760380788785" duration="1325000" />
+      <workItem from="1773929263270" duration="1133000" />
+      <workItem from="1773930414261" duration="785000" />
     </task>
     <servers />
   </component>

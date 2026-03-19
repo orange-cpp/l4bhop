@@ -2,10 +2,5 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/extlibs/minhook" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/extlibs/omath" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/extlibs/omath/extlibs/benchmark" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/extlibs/omath/extlibs/googletest" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/extlibs/xorstr" vcs="Git" />
   </component>
 </project>

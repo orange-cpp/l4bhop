@@ -9,6 +9,12 @@ add_library(l4bhop MODULE src/main.cpp)
 set(CMAKE_SHARED_MODULE_PREFIX "")
 
 add_subdirectory(src/SDK)
-add_subdirectory(extlibs)
-target_link_libraries(l4bhop PRIVATE minhook xorstr omath::omath)
+
+find_package(minhook CONFIG REQUIRED)
+find_package(omath CONFIG REQUIRED)
+target_link_libraries(l4bhop PRIVATE minhook::minhook omath::omath)
+
+
+target_include_directories(${PROJECT_NAME} PRIVATE vmprotect_sdk/include)
+target_link_directories(${PROJECT_NAME} PRIVATE vmprotect_sdk/lib)
 target_link_options(${PROJECT_NAME} PRIVATE /MAP)

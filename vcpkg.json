@@ -1,0 +1,9 @@
+{
+  "name": "left4bhop",
+  "version": "1.0.1",
+  "supports": "windows",
+  "dependencies": [
+    "minhook",
+    "orange-math"
+  ]
+}
